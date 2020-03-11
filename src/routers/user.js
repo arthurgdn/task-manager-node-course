@@ -5,7 +5,7 @@ const multer = require('multer')
 const sharp = require('sharp')
 const path = require('path')
 const bcrypt = require('bcryptjs')
-const {sendWelcomeEmail,sendGoodbyeEmail} = require('../emails/account')
+//const {sendWelcomeEmail,sendGoodbyeEmail} = require('../emails/account')
 
 const router = new express.Router()
 router.post('/users', async (req, res) => {
@@ -23,7 +23,7 @@ router.post('/users', async (req, res) => {
         
         await user.save()
         
-        sendWelcomeEmail(user.email,user.name)
+        //sendWelcomeEmail(user.email,user.name)
         res.status(201).send({user,token})
     }
     catch(e){
@@ -82,7 +82,7 @@ router.delete('/users/me',auth, async (req,res)=>{
         const email = req.user.email
         const name = req.user.name
         await req.user.remove()
-        sendGoodbyeEmail(email,name)
+        //sendGoodbyeEmail(email,name)
         res.send(req.user)
     }
     catch(e){
