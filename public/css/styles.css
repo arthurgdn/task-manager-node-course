@@ -1,0 +1,216 @@
+body {
+    color : #333333;
+    font-family : arial;
+    max-width : 650px;
+    margin : 0 auto;
+    padding : 0 16px;
+    display : flex;
+    flex-direction: column;
+    min-height : 100vh
+}
+.main-content{
+    flex-grow : 1;
+}
+.profile-content{
+    display : flex;
+    flex-grow : 1;
+    flex-direction: row;
+
+}
+
+footer {
+    color : #888888;
+    border-top : 1px solid #eeeeee;
+    margin-top : 16px;
+    padding : 16px;
+}
+
+header {
+    margin-top : 16px;
+    margin-bottom : 48px;
+}
+.task_navigation {
+    margin-top : 16px;
+    margin-bottom : 32px;
+    padding : 14px;
+    border: 2px solid #333333
+}
+
+.task_navigation a {
+    color : #888888;
+    margin : 16px;
+    padding : 14px;
+    text-decoration : none; 
+    
+}
+
+h1 {
+    font-size : 32px;
+    margin-bottom : 16px;
+}
+
+header a {
+    color : #888888;
+    margin-right : 16px;
+    text-decoration : none; 
+}
+
+.portrait{
+    width : 250px;
+}
+input{
+    border: 1px solid #cccccc;
+    margin : 5px;
+    padding : 8px;
+    width : 190px
+}
+#completed{
+    width : 10px;
+}
+#task-created{
+    color : lightgreen
+}
+[id^=completedBox]{
+    width : 0px;
+}
+
+[id^=description]{
+    display : inline-block;
+    padding : 5px;
+    margin : 1px;
+    border-bottom: 1px solid black;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    width: 380px;
+    
+
+}
+.changePassHelp{
+    color : red;
+    font-size : 11px;
+    font-family : Arial;
+    margin-left : 8px;
+}
+
+.signupHelp{
+    color : red;
+    font-size: 11px;
+    font-family: Arial;
+    margin-left : 8px;
+}
+#signupArea{
+    display : none;
+    border : 1px solid black;
+}
+textarea{
+    width : 380px;
+    padding : 10px;
+    resize: none;
+}
+button {
+    cursor: pointer;
+    border : 1px solid #888888;
+    background : #888888;
+    color : white;
+    padding : 8px;
+}
+#suggest{
+    width: 206px;
+    
+}
+
+#suggestion{
+    
+    padding : 2px;
+    
+    
+}
+#suggestion:hover{
+    cursor:pointer;
+    background : #cccccc;
+    
+}
+
+#imageBox{
+    width : 250px;
+    margin : 10px;
+    
+}
+#uploadAvatar{
+    display: block;
+
+    margin: 10px auto 10px auto;
+}
+#textInfoBox{
+    flex : 1;
+    margin : 10px;
+
+}
+#uploadInterface{
+    display:none;
+    border : 1px solid #333333;
+}
+#changePassInterface{
+    display : none;
+    border: 1px solid #333333;
+}
+
+.custom-select {
+    
+    font-family: Arial;
+  }
+  /*
+  .custom-select select {
+    display: none;
+  } 
+  */
+  .select-selected {
+    background-color: #333333;
+  }
+  
+  /* Style the arrow inside the select element: */
+  .select-selected:after {
+    position: absolute;
+    content: "";
+    top: 14px;
+    right: 10px;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-color: #fff transparent transparent transparent;
+  }
+  
+  /* Point the arrow upwards when the select box is open (active): */
+  .select-selected.select-arrow-active:after {
+    border-color: transparent transparent #fff transparent;
+    top: 7px;
+  }
+  
+  /* style the items (options), including the selected item: */
+  .select-items div,.select-selected {
+    color: #ffffff;
+    padding: 8px 16px;
+    border: 1px solid transparent;
+    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+    cursor: pointer;
+  }
+  
+  /* Style items (options): */
+  .select-items {
+    position: absolute;
+    background-color: #333333;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+  }
+  
+  /* Hide the items when the select box is closed: */
+  .select-hide {
+    display: none;
+  }
+  
+  .select-items div:hover, .same-as-selected {
+    background-color: rgba(153, 99, 99, 0.1);
+  }

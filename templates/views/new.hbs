@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Accueil</title>
+        <link rel = 'stylesheet' href = '/css/styles.css'/>
+    </head>
+    <body>
+        <div class = "main-content">
+        {{>header}}
+        <p id="welcome-message"></p>
+        {{>task_navigation}}
+        <p>Créer une nouvelle tâche : </p>
+        <form id="new-task">
+            <textarea placeholder="Description de la tâche"></textarea><br/>
+            <label for="completed">Terminée : </label><input type="checkbox" id="completed"><br/>
+            <input type="submit" value="Créer">
+        </form>
+        <p id="task-created"></p>
+        
+        
+        {{>footer}}
+        <script src="/js/new.js"></script>
+    </body>
+</html>

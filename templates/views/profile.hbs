@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Accueil</title>
+        <link rel = 'stylesheet' href = '/css/styles.css'/>
+    </head>
+    <body>
+        
+        {{>header}}
+        
+        <p id="welcome-message"></p>
+        {{>task_navigation}}
+        <div class = "profile-content">
+        <div id="imageBox">
+            <br>
+            
+            <button id="uploadAvatar">Changer de photo de profil</button>
+            <div id="uploadInterface">
+                <form  enctype="multipart/form-data" method="POST" id="uploadForm">
+                    <input type="file" name="profilePic" accept="image" />
+                    <p id="uploadTip"style="font-size: 10px; margin-left : 5px">L'image doit être plus petite que 1Mo </p>
+                    <input type="submit" value="Enregistrer" id ="upload" />
+                </form>
+            </div>
+        </div>
+        <div id="textInfoBox">
+            <p id="name"></p>
+            <p id="taskCount"></p>
+            <p id="taskIncomplete"></p>
+            <button id="toggleChangePass">Changer de mot de passe</button>
+            
+        <button id="deleteAccount">Supprimer mon compte</button>
+        <div id="changePassInterface">
+            <form id="changePassForm">
+                <input type="password" placeholder="Mot de passe actuel" id="currentPass">
+                <input type="password" placeholder="Nouveau mot de passe" id="newPass"><span id="newPassHelp" class="changePassHelp"></span>
+                <input type="password" placeholder="Vérification nouveau mot de passe" id="newPassCheck"><span id="newPassCheckHelp" class="changePassHelp"></span>
+                <input type="submit" value="Change" id="changePass">
+                <span id="resultTip"></span>
+            </form>
+        </div>
+        </div>
+        </div>
+        
+        
+        
+        {{>footer}}
+        <script src="/js/profile.js"></script>
+    </body>
+</html>
