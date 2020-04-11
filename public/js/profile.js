@@ -37,12 +37,12 @@ if (token === null) {
     window.open('/','_top')
 }
 else{
-document.querySelectorAll('a')[5].setAttribute('style',"border-bottom: 4px solid #333333;color: #333333")
+document.querySelectorAll('a')[2].setAttribute('style',"border-bottom: 4px solid #333333;color: #333333")
 fetch('users/me',{headers:{Authorization : "Bearer "+ token}}).then((response)=>{
     response.json().then((data)=>{
       const profilePic = document.createElement('img')
       profilePic.src = '/users/'+data._id+'/avatar'
-      console.log(profilePic.src)
+      
       document.querySelector('#imageBox').insertBefore(profilePic,document.querySelector('#imageBox').firstChild)
       document.querySelector('#name').textContent = data.name
       document.querySelector('#taskCount').textContent = data.taskCount+" tâches créées"
@@ -64,7 +64,7 @@ deleteButton.addEventListener('click',async(e)=>{
   if(confirm("Etes vous sûr de vouloir supprimer votre compte?")){
   
   const response = await fetch('users/me' ,{method : "DELETE",headers : {Authorization : 'Bearer '+ token}})
-  console.log(await response.json())
+  
   deleteCookie('token')
   window.open('/','_top')}
 })

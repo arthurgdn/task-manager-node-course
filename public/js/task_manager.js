@@ -91,14 +91,14 @@ else{
         const editButton = document.createElement('button')
         const editToggled =  async (e)=>{
           const selectedBoxId = getSelectedBoxId(e,"editButton")
-          console.log(selectedBoxId)
+          
           const description = document.querySelector('#description'+String(selectedBoxId))
           let descriptionText = description.textContent
           description.remove()
           const changeDescription = document.createElement('input')
           changeDescription.id = "description" 
           changeDescription.value = descriptionText
-          changeDescription.maxLength = 50
+          changeDescription.maxLength = 48
           const editButtonSelected = document.querySelector('#editButton' + selectedBoxId)
           
           taskElement.insertBefore(changeDescription,editButtonSelected)
@@ -110,7 +110,7 @@ else{
             e.preventDefault()
             descriptionText = document.querySelector('#description').value
             const response = await fetch('tasks/' + idArray[Number(selectedBoxId)],{method : "PATCH",body : JSON.stringify({description : descriptionText}),headers : {Authorization : 'Bearer '+ token,'Content-type':'application/json'}})
-            console.log(response)
+            
             window.open('/task_manager','_top')
           })
         }
@@ -135,7 +135,7 @@ else{
             
             const response = await fetch('tasks/' + idArray[Number(selectedBoxId)],{method : "PATCH",body : JSON.stringify({completed}),headers : {Authorization : 'Bearer '+ token,'Content-type':'Application/json'}})
             
-            console.log(await response.json())
+            
         })
         taskElement.appendChild(completedBox)
         const deleteButton = document.createElement('button')
@@ -145,7 +145,7 @@ else{
           if(confirm("Etes vous sûr de vouloir supprimer cette tâche?")){
           const selectedBoxId = getSelectedBoxId(e,'deleteButton')
           const response = await fetch('tasks/' + idArray[Number(selectedBoxId)],{method : "DELETE",headers : {Authorization : 'Bearer '+ token}})
-          console.log(await response.json())
+          
           window.open('/task_manager','_top')}
         })
         taskElement.appendChild(deleteButton)
@@ -160,7 +160,7 @@ else{
     loadTasks(Number(filterTasks.value))
   })
 
-    document.querySelectorAll('a')[4].setAttribute('style',"border-bottom: 4px solid #333333;color: #333333")
+    document.querySelectorAll('a')[1].setAttribute('style',"border-bottom: 4px solid #333333;color: #333333")
 fetch('users/me',{headers:{Authorization : "Bearer "+ token}}).then((response)=>{
     response.json().then((data)=>{
         document.querySelector('#welcome-message').textContent = 'Bienvenue '+data.name+' vous pouvez gérer vos tâches ici!'

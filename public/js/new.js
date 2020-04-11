@@ -37,7 +37,7 @@ if (token === null) {
     window.open('/','_top')
 }
 else{
-    document.querySelectorAll('a')[3].setAttribute('style',"border-bottom: 4px solid #333333;color: #333333")
+    document.querySelectorAll('a')[0].setAttribute('style',"border-bottom: 4px solid #333333;color: #333333")
 fetch('users/me',{headers:{Authorization : "Bearer "+ token}}).then((response)=>{
     response.json().then((data)=>{
         document.querySelector('#welcome-message').textContent = 'Bienvenue '+data.name+' vous pouvez vos tâches ici!'

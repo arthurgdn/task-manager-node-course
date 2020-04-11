@@ -82,7 +82,7 @@ input{
     border-top: 0px;
     border-left: 0px;
     border-right: 0px;
-    width: 380px;
+    width: 370px;
     
 
 }
@@ -101,8 +101,21 @@ input{
 }
 #signupArea{
     display : none;
-    border : 1px solid black;
+    border : 1px solid #888888;
+    width : 250px;
+    
 }
+#signupForm{
+    margin : 5px;
+    padding : 8px;
+    width : 190px;
+    justify-content: space-evenly;
+    
+}
+#signup{
+    width : 200px;
+}
+
 textarea{
     width : 380px;
     padding : 10px;

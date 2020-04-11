@@ -24,13 +24,13 @@ router.get('/task_manager',(req,res)=>{
 
 router.get('/new',(req,res)=>{
     res.render('new',{
-        title:"Accueil",
+        title:"Nouvelle Tâche",
         name
     })
 })
 router.get('/profile',(req,res)=>{
     res.render('profile',{
-        title:"Accueil",
+        title:"Profile",
         name
     })
 })
@@ -41,19 +41,7 @@ router.get('/profile',(req,res)=>{
 
 
 
-router.get('/about',(req,res)=>{
-    res.render('about',{
-        title : "A propos",
-        name
-    })
-})
-router.get('/help',(req,res)=>{
-    res.render('help',{
-        title: "Aide",
-        message :"Connectez vous ou inscrivez vous pour pouvoir créer des tâches et les gérer.",
-        name 
-    })
-})
+
 
 router.get('*',(req,res)=>{
     res.render('error'),{

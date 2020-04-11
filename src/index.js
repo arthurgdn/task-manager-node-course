@@ -33,15 +33,7 @@ app.use(navigationRouter)
 
 
 
-// const main = async ()=>{
-//     // const task = await Task.findById('5e4d948a3cefc12cd4af758f')
-//     // await task.populate('owner').execPopulate()
-//     // console.log(task.owner)
-//     const user = await User.findById('5e4c17cc48b0fd44c037c5fd')
-//     await user.populate('tasks').execPopulate()
-//     console.log(user.tasks)
-// }
-// main()
+
 
 app.listen(port, () => {
     console.log('Server is up on port ' + port)

@@ -16,17 +16,17 @@ loginForm.addEventListener('submit', async (e)=>{
     e.preventDefault()
     const email = document.querySelector("#email").value
     const password = document.querySelector("#password").value
-    console.log(email,password)
+    
 
     const response = await fetch('/users/login',{body:JSON.stringify({email,password}),method:"POST",headers: { 'Content-type': 'application/json' }})
     
-    console.log(response)
+    
     if(response.status !== 200){
         document.querySelector('#responseArea').textContent = "Email ou mot de passe incorrect!"
     }
     else{
     const data = await response.json()
-    console.log(data)
+    
     document.cookie = "token="+data.token+";path=/"
     window.location.reload(false)}
     
@@ -34,10 +34,10 @@ loginForm.addEventListener('submit', async (e)=>{
 //Affiche le form pour s'inscrire quand on clique sur le boutton
 document.querySelector('#showSignup').addEventListener('click',()=>{
     const buttonDisplay = document.querySelector('#signupArea')
-    if(buttonDisplay.style.display ==="block"){
+    if(buttonDisplay.style.display ==="flex"){
         buttonDisplay.style.display ="none"
     }else{
-        buttonDisplay.style.display = "block"
+        buttonDisplay.style = "display: flex;  flex-direction : row"
     }
 })
 let typingTimer;                //timer identifier
@@ -158,14 +158,14 @@ document.getElementById('signup').addEventListener('click',async (e)=>{
         const email = document.querySelector('#signupEmail').value
         const password = document.querySelector('#signupPassword').value
         const name = document.querySelector('#signupName').value
-        console.log(email,password,name)
+        
 
         const response = await fetch('/users/',{body:JSON.stringify({email,password,name}),method:"POST",headers: { 'Content-type': 'application/json' }})
         if(response.status!==400){
             const data = await response.json()
             document.cookie = "token="+data.token+";path=/"
             const signupResponseArea = document.getElementById('signupResponse')
-            signupResponseArea.textContent="Vous vous êtes inscrit avec succès ! Vous allez être redirigé vers votre gestionnaire de tâches"
+            signupResponseArea.textContent="Vous êtes inscrits avec succès !"
             signupResponseArea.style.color = "green"
             setTimeout(()=>{
                 signupResponseArea.textContent=""
@@ -174,7 +174,7 @@ document.getElementById('signup').addEventListener('click',async (e)=>{
             
         }
         else{
-            console.log(response)
+            
         const signupResponseArea = document.getElementById('signupResponse')
         signupResponseArea.textContent="Impossible de s'inscrire !"
         signupResponseArea.style.color = "red"}
